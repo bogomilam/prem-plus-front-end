@@ -35,4 +35,23 @@
   to {
     transform: rotate(360deg);
   }
+} 
+.card-team {
+  /* height: 100px; */
+  float: left;
 }
+
+.card-sim {
+  float: none;
+}
+
+.card img {
+height:200px;
+width:200px;
+}
+
+.container {
+  display: flex;
+}
+
+
