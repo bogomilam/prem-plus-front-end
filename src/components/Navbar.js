@@ -4,32 +4,33 @@ import React from 'react'
 
 export default class Navbar extends React.Component {
 
+
     render() {
-    const { handleNav }  = this.props
+    const { handleNav, searchValue, handleSearchChange }  = this.props
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="#">Navbar</a>
+            <a className="navbar-brand" href="#">SlimJimSim
+            </a>
+            <div className='b'></div>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
           
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
-                  <a className="nav-link" onClick={(e) => handleNav(e)} href="#">Home<span class="sr-only">(current)</span></a>
+              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li className="nav-item" onClick={(e) => handleNav(e)}>
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
                 </li>
-                <li className="nav-item" >
-                  <a className="nav-link" onClick={(e) => handleNav(e)} href="#">Clubs</a>
+                <li className="nav-item" key="profile" onClick={(e) => handleNav(e)}>
+                <a class="nav-link" id="pills-results-tab" data-toggle="pill" href="#pills-results" role="tab" aria-controls="pills-results" aria-selected="false">Results</a>
                 </li>
-                <input placeholder="Search for a team" />
-                {/* <li className="nav-item" >
-                  <a className="nav-link" onClick={(e) => handleNav(e)} href="#">Clubs</a>
-                </li> */}
-               
-            
+                <li className="nav-item" key="profile" onClick={(e) => handleNav(e)}>
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                </li>
+                <input placeholder="Search for a team" value={searchValue} onChange={ (e) => handleSearchChange(e)}/>
               </ul>
             </div>
-          </nav>
+         </nav>
         )
     }
 
