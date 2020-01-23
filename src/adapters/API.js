@@ -84,13 +84,15 @@ const getFollowing = (club_id) => {
     return fetch(`${CLUBS_URL}/${club_id}`).then(jsonify)
 }
 
-const deleteFollowing = (club_id, user_id) => {
+const deleteFollowing = (user_id) => {
     return fetch(`${USERS_ENDPOINT}/${user_id}`, {
-        method: "DELETE",
-        body: JSON.stringify({ user_id: user_id, 
-            club_id: null})
+        method: "DELETE"
     }).then(jsonify)
 }
+
+const clearToken = () => {
+    localStorage.removeItem("token");
+  };
 
 export default {
     login,
@@ -99,5 +101,6 @@ export default {
     updateFollowing,
     getFollowing,
     postFollowing,
-    deleteFollowing
+    deleteFollowing,
+    clearToken
 }

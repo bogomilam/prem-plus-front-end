@@ -95,10 +95,17 @@ const fetchClubs = () => {
 
 const handleLogin = (loginData) => {
   API.login(loginData).then(user => setUser(user))
+  unshowSearch()
 }
 
 const handleSignUp = (signupData) => {
   API.signup(signupData).then(user => setUser(user))
+  unshowSearch()
+}
+
+const logHandler = () => {
+setUser(null) 
+API.clearToken()
 }
 
 const renderFixtureContainer = () => {
@@ -108,9 +115,11 @@ const renderFixtureContainer = () => {
   // if (searchedResult === "") return < FixtureContainer showClub={showClub} unshowClub={unshowClub} displayClub={displayClub} />
   if (nav === "Home") return  < FixtureContainer showClub={showClub} unshowClub={unshowClub} displayClub={displayClub} />
   if (nav === "Results") return < ResultsContainer showClub={showClub} unshowClub={unshowClub} />
-  if (nav === "Profile") return < Profile followedClub={followedClub} unfollowClub={unfollowClub} unshowSearch={unshowSearch} />
+  if (nav === "Profile") return < Profile followedClub={followedClub} unfollowClub={unfollowClub} unshowSearch={unshowSearch} user={user} logHandler={logHandler} />
   return  < FixtureContainer showClub={showClub} unshowClub={unshowClub} displayClub={displayClub} />
 }
+
+
 
 
 return (

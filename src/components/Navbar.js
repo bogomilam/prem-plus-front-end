@@ -6,10 +6,10 @@ export default class Navbar extends React.Component {
 
 
     render() {
-    const { handleNav, searchValue, handleSearchChange }  = this.props
+    const { handleNav, searchValue, handleSearchChange, user }  = this.props
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="#">SlimJimSim
+            <a className="navbar-brand" href="#">SlimSim
             </a>
             <div className='b'></div>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

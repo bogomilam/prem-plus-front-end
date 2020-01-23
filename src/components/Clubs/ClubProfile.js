@@ -11,16 +11,16 @@ export default class ClubProfile extends React.Component {
     // }
 
     followButtonHandler = (club, props) => {
-        console.log(props)
+        // console.log(club, props, "HEYEY")
         if (props.followedClub && club.id === props.followedClub.id) return <button type="button" class="btn btn-danger" onClick={()=> props.unfollowClub()}>Unfollow {club.name}</button>
-        else return <button type="button" class="btn btn-primary" onClick={ (props.user.club_id) ? () => props.resetFollowing(props.club) : () => props.followClub(props.club) }>Follow {club.name}</button>
+        else return <button type="button" class="btn btn-primary" onClick={() => props.resetFollowing(props.club)}>Follow {club.name}</button>
     }
 
     render() {
         
-        const { unshowClub, followClub, followedClub, unfollowClub, user, resetFollowing } = this.props
+        const { unshowClub, followClub, followedClub, unfollowClub } = this.props
         const club   = this.props.club
-        if (!club.id) return <div>no!</div>
+        if (!club) return <div></div>
         return (
             <div className="card-team">
             <div className="card-team" >

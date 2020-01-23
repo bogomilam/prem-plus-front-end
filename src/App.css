@@ -55,4 +55,8 @@ width:200px;
   display: flex;
 }
 
+.profileBtn {
+  float: left;
+}
+
 
