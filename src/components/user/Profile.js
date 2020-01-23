@@ -7,7 +7,7 @@ export default class Profile extends React.Component {
 
     render() {
         const { followedClub, unfollowClub, unshowSearch } = this.props
-        if (!followedClub) return <div></div>
+        // if (!followedClub) return <div></div>
         return (
             <div>
              { !followedClub ? (

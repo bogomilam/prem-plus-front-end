@@ -5,16 +5,22 @@ import ClubAway from './ClubAway'
 
 export default class ClubProfile extends React.Component {
 
-    followHandler = (props) => {
-        props.followedClub === props.club.id ? props.unfollowClub(props.club.id) : props.resetFollowing(props.club.id)
-        // console.log(props)
+    // followHandler = (props) => {
+    //     props.followedClub === props.club.id ? props.unfollowClub(props.club.id) : props.resetFollowing(props.club.id)
+    //     // console.log(props)
+    // }
+
+    followButtonHandler = (club, props) => {
+        console.log(props)
+        if (props.followedClub && club.id === props.followedClub.id) return <button type="button" class="btn btn-danger" onClick={()=> props.unfollowClub()}>Unfollow {club.name}</button>
+        else return <button type="button" class="btn btn-primary" onClick={ (props.user.club_id) ? () => props.resetFollowing(props.club) : () => props.followClub(props.club) }>Follow {club.name}</button>
     }
 
     render() {
         
-        const { unshowClub, followClub, followedClub } = this.props
+        const { unshowClub, followClub, followedClub, unfollowClub, user, resetFollowing } = this.props
         const club   = this.props.club
-        if (!club) return <div></div>
+        if (!club.id) return <div>no!</div>
         return (
             <div className="card-team">
             <div className="card-team" >
@@ -41,8 +47,9 @@ export default class ClubProfile extends React.Component {
             < ClubAway club={club} />
             </div>
             <div>
-            <button type="button" class="btn btn-primary" onClick={() => this.followHandler(this.props)}>Follow {club.name}</button>
-            {/* followedClub, followClub, unfollowClub, club */}
+            {this.followButtonHandler(club, this.props)}
+            {/* <button type="button" class="btn btn-primary" onClick={() => this.followHandler(this.props)}>Follow {club.name}</button>
+            followedClub, followClub, unfollowClub, club */}
             {/* <button type="button" class="btn btn-primary" onClick={() => followClub(club.id)}>Follow {club.name}</button> */}
             </div>
             <div>

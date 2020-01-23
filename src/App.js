@@ -10,6 +10,8 @@ import Profile from './components/user/Profile'
 import ClubProfile from './components/Clubs/ClubProfile'
 import FullFixture from './components/Fixtures/FullFixture'
 
+import LoginForm from './components/user/LogInForm';
+
 
 const CLUB_ENDPOINT = 'http://localhost:3000/clubs'
 
@@ -44,19 +46,18 @@ const filterSearchResults = () => {
   }
 
   const unfollowClub = () => {
-    setFollowedClub(null)
     API.deleteFollowing(user.club_id)
+setFollowedClub(null)
   }
 
-  const followClub = id => {
-    setFollowedClub(id)
-    API.postFollowing(id, user.id)
+  const followClub = club => {
+    // console.log(club.id, user.id)
+    API.postFollowing(club.id, user.id).then(setFollowedClub(club))
   }
 
-  const resetFollowing = id => {
-    setFollowedClub(id)
+  const resetFollowing = club => {
+    API.updateFollowing(club.id, user.id).then(setFollowedClub(club) )
     // console.log(followedClub, "FOLLOWED CLUB")
-    API.updateFollowing(id, user.id)
   }
 
   const unshowClub = () => {
@@ -74,7 +75,8 @@ const filterSearchResults = () => {
   const handleNav = (e) => {
     setNav(e.target.innerText)
 }
-  
+
+
 
 useEffect(() => {
   fetchClubs();
@@ -100,31 +102,30 @@ const handleSignUp = (signupData) => {
 }
 
 const renderFixtureContainer = () => {
-  if (searchedClub) return < Profile followedClub={searchedClub} unshowSearch={unshowSearch} /> 
+  if (searchedClub) return < ClubProfile showClub={showClub} unshowClub={unshowClub} user={user} club={searchedClub} 
+  followedClub={followedClub} followClub={followClub} unfollowClub={unfollowClub}
+  resetFollowing={resetFollowing} />
   // if (searchedResult === "") return < FixtureContainer showClub={showClub} unshowClub={unshowClub} displayClub={displayClub} />
   if (nav === "Home") return  < FixtureContainer showClub={showClub} unshowClub={unshowClub} displayClub={displayClub} />
   if (nav === "Results") return < ResultsContainer showClub={showClub} unshowClub={unshowClub} />
   if (nav === "Profile") return < Profile followedClub={followedClub} unfollowClub={unfollowClub} unshowSearch={unshowSearch} />
+  return  < FixtureContainer showClub={showClub} unshowClub={unshowClub} displayClub={displayClub} />
 }
 
+
 return (
-      <div > 
-        < Navbar handleNav={handleNav}  user={user} handleSearchChange={handleSearchChange} searchValue={searchValue} >
-        {/* {user && <span>Hello, {user.email}!</span>} */}
-         </Navbar>
-         { !user ? (
-         < LogInForm login={handleLogin} signup={handleSignUp} /> 
-         ) : ( 
-           < FixtureContainer /> 
-         )}
+      <div>
+        {!user && (< LoginForm login={handleLogin} signup={handleSignUp} />)}
+          {user && (<div>< Navbar handleNav={handleNav}  user={user} handleSearchChange={handleSearchChange} searchValue={searchValue} >
+          </Navbar>
           { !displayClub ? (
             renderFixtureContainer()
           ) : (
-            < ClubProfile  showClub={showClub} unshowClub={unshowClub} club={displayClub} 
+            < ClubProfile  showClub={showClub} unshowClub={unshowClub} user={user} club={displayClub} 
             followedClub={followedClub} followClub={followClub} unfollowClub={unfollowClub}
             resetFollowing={resetFollowing} />
           )
-          }
+          }</div>) }
       </div>
     )
   }

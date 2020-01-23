@@ -27,7 +27,7 @@ export default class Navbar extends React.Component {
                 <li className="nav-item" key="profile" onClick={(e) => handleNav(e)}>
                 <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
                 </li>
-                <input placeholder="Search for a team" value={searchValue} onChange={ (e) => handleSearchChange(e)}/>
+                {/* <input placeholder="Search for a team" value={searchValue} onChange={ (e) => handleSearchChange(e)}/> */}
               </ul>
             </div>
          </nav>

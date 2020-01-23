@@ -88,7 +88,7 @@ const deleteFollowing = (club_id, user_id) => {
     return fetch(`${USERS_ENDPOINT}/${user_id}`, {
         method: "DELETE",
         body: JSON.stringify({ user_id: user_id, 
-            club_id: club_id})
+            club_id: null})
     }).then(jsonify)
 }
 

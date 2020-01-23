@@ -110,10 +110,6 @@ roundSim = () => {
       console.log(this.state.simFTSRec)
     }
 
-  // componentDidMount = () => {
-  //   this.GoalSim(this.props.fixture.id)
-  // }
-
 
   render() {
     const { fixture, showClub, unshowFixture } = this.props
