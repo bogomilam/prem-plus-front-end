@@ -7,6 +7,7 @@ export default class ResultCard extends React.Component {
     render() {
       const { result, showClub, unshowClub } = this.props
             return (
+              <div className="fixture">
               <div className="card" >
                 <h5 className="card-img-top">Full Time at {result.stadium_name}</h5>
                 <div className="card-body">
@@ -14,6 +15,7 @@ export default class ResultCard extends React.Component {
                 < ResultHome result={result} showClub={showClub} unshowClub={unshowClub}/>
                 < ResultAway result={result} showClub={showClub} unshowClub={unshowClub}/>  
                 </div>
+              </div>
               </div>
               );
     }

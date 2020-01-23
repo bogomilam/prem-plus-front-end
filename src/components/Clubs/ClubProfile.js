@@ -23,7 +23,7 @@ export default class ClubProfile extends React.Component {
         if (!club) return <div></div>
         return (
             <div className="card-team">
-            <div className="card-team" >
+            <div className="profile" >
             <img className="card-img-top" src={club.image} alt="cad thing"/>
             <div className="card-body">
                 <h5 className="card-title">{club.name}</h5>

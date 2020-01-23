@@ -14,6 +14,7 @@ export default class FixtureCard extends React.Component {
     const { fixture, clubs, showClub, unshowClub, showFixture, unshowFixture, displayClub } = this.props
     
     return (
+              <div className="card-fixture">
               <div className="card" >
               <div className="card-body">
                 <h5 class="card-title"></h5>
@@ -21,7 +22,8 @@ export default class FixtureCard extends React.Component {
                   < FixtureHome fixture={fixture} showClub={showClub} unshowClub={unshowClub} displayClub={displayClub} /> 
                   < FixtureAway fixture={fixture} showClub={showClub} unshowClub={unshowClub} displayClub={displayClub} />
               </div>
-              <button type="button" class="btn btn-success" onClick={() => showFixture(fixture) }>Simulate Fixture</button>
+              <button type="button" class="btn btn-success" onClick={() => showFixture(fixture)}>Simulate Fixture</button>
+            </div>
             </div>
               );
     }

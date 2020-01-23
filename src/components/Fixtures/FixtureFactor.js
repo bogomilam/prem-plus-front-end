@@ -4,7 +4,7 @@ import React from 'react'
 export default class FixtureFactor extends React.Component {
 
     render() {
-        const { fixture, checkAvgPointsItem, checkCSItem, checkFTSItem } = this.props
+        const { fixture, checkAvgPointsItem, checkCSItem, checkFTSItem, checkConcedeItem, checkScoredItem } = this.props
         // const  rops.fixture.home_club.clubStat
         // console.log(fixture)
         if (!fixture) return <div></div>
@@ -19,19 +19,19 @@ export default class FixtureFactor extends React.Component {
             </div>
             <ul className="list-group">
             <li className="list-group-item d-flex list-group-item-secondary justify-content-between align-items-center">   
-                Slim Jim Sim
+                Slim Sim
             </li>
             <li className="list-group-item d-flex list-group-item-secondary justify-content-between align-items-center">
-                Slim Jim Sim
+                Slim Sim
             </li>
             <li className="list-group-item d-flex list-group-item-secondary justify-content-between align-items-center">
-                Slim Jim Sim
+                Slim Sim
             </li>
             <li className="list-group-item d-flex list-group-item-secondary justify-content-between align-items-center">
-                Slim Jim Sim
+                Slim Sim
             </li>
             <li className="list-group-item d-flex list-group-item-secondary justify-content-between align-items-center">
-                Slim Jim Sim
+                Slim Sim
             </li>
             <li className="list-group-item d-flex list-group-item-info justify-content-between align-items-center">   
                Include Average Points ?
@@ -52,6 +52,20 @@ export default class FixtureFactor extends React.Component {
                 <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="customCheck4"/>
                 <label class="custom-control-label" for="customCheck4" onClick={ () => checkFTSItem()}></label>
+                </div>
+            </li>
+            <li className="list-group-item d-flex list-group-item-info justify-content-between align-items-center">
+                Include Scored Goals ?
+                <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck5"/>
+                <label class="custom-control-label" for="customCheck5" onClick={ () => checkScoredItem()}></label>
+                </div>
+            </li>
+            <li className="list-group-item d-flex list-group-item-info justify-content-between align-items-center">
+                Include Conceded Goals ?
+                <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck6"/>
+                <label class="custom-control-label" for="customCheck6" onClick={ () => checkConcedeItem()}></label>
                 </div>
             </li>
             <li class="list-group-item list-group-item-success">

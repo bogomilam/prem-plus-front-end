@@ -25,7 +25,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #98FB98;
 }
 
 @keyframes App-logo-spin {
@@ -38,7 +38,16 @@
 } 
 .card-team {
   /* height: 100px; */
+  /* text-align: centre; */
   float: left;
+  /* font-family: algerian, courier; */
+}
+
+.card-fixture{
+    float: left;
+    font-size: 130%;
+    font-family: algerian, courier;
+
 }
 
 
@@ -51,12 +60,34 @@ height:200px;
 width:200px;
 }
 
+.fixture-container{
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.profile{
+  margin-left: 100px;
+}
+
 .container {
   display: flex;
 }
 
-.profileBtn {
-  float: left;
+.fixture{
+  float:centre;
+}
+
+.fix-card{
+  float: right;
+}
+
+.navbar-default {
+  background-color: #E6E6FA;
+  border-color: #E7E7E7;
+}
+
+body {
+background-color: #E6E6FA;
 }
 
 

@@ -25,15 +25,15 @@ export default class FixtureAway extends React.Component {
         <span className="badge badge-primary badge-pill">{club.played_overall}</span>
             </li>
             <li className="list-group-item d-flex justify-content-between align-items-center">
-                Away Wins 
+                Away Wins %
                 <span className="badge badge-primary badge-pill">{club.win_away}%</span>
             </li>
             <li className="list-group-item d-flex justify-content-between align-items-center">
-                Away Draws 
+                Away Draws %
                 <span className="badge badge-primary badge-pill">{club.draw_away}%</span>
             </li>
             <li className="list-group-item d-flex justify-content-between align-items-center">
-                Away Loss 
+                Away Losses %
                 <span className="badge badge-primary badge-pill">{club.loss_away}%</span>
             </li>
             <li className="list-group-item d-flex list-group-item-info justify-content-between align-items-center">
@@ -47,6 +47,14 @@ export default class FixtureAway extends React.Component {
             <li className="list-group-item d-flex list-group-item-info justify-content-between align-items-center">
                 Failed to Score Away
                 <span className="badge badge-primary badge-pill">{club.fts_away} </span>
+            </li>
+            <li className="list-group-item d-flex list-group-item-info justify-content-between align-items-center">
+                Scored Away
+                <span className="badge badge-primary badge-pill">{club.goals_away} </span>
+            </li>
+            <li className="list-group-item d-flex list-group-item-info justify-content-between align-items-center">
+                Conceded Away
+                <span className="badge badge-primary badge-pill">{club.concede_away} </span>
             </li>
             <li class="list-group-item list-group-item-success">
                 <span className="badge badge-primary badge-pill">{avgAwayGoal}</span>

@@ -1,7 +1,7 @@
 import React from 'react'
 import ResultCard from '../components/Results/ResultCard'
 
-const RESULT_ENDPOINT = 'http://localhost:3000/matches?game_week=23'
+const RESULT_ENDPOINT = 'http://localhost:3000/matches?game_week=24'
 
 export default class ResultContainer extends React.Component{
 
@@ -23,7 +23,7 @@ export default class ResultContainer extends React.Component{
         const { results } = this.state
         const { showClub, unshowClub } = this.props
         return(
-            <div>
+            <div className="fixture-container">
             {results.map(result => {
                 return <ResultCard result={result} key={result.id} showClub={showClub} unshowClub={unshowClub} />
              }) }

@@ -16,7 +16,7 @@ export default class Profile extends React.Component {
         const { followedClub, unfollowClub, unshowSearch, user, logHandler} = this.props
         // if (!followedClub) return <div></div>
         return (
-            <div className="container-fluid">
+            <div className="profile">
                 <div className="row">
                 { !followedClub ? (
               <div className="alert alert-info" role="alert">
