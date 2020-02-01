@@ -28,7 +28,7 @@ export default class ClubProfile extends React.Component {
         const club   = this.props.club
         if (!club) return <div></div>
         return (
-            <div className="container-fluid" onClick={() =>unshowClub()}>
+            <div className="fixture-container" onClick={() =>unshowClub()}>
             <div className="card-profile" >
             <img className="card-img-top"  src={club.image} alt="cad thing"/>
             <div className="card-body">

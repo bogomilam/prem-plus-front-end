@@ -16,7 +16,8 @@ export default class Profile extends React.Component {
         const { followedClub, unfollowClub, unshowSearch, user, logHandler} = this.props
         // if (!followedClub) return <div></div>
         return (
-            <div className="profile">
+            <div className="fixture-container">
+            <div className="card-profile">
                 <div className="row">
                 { !followedClub ? (
               <div className="alert alert-info" role="alert">
@@ -29,6 +30,7 @@ export default class Profile extends React.Component {
             
              <div className="row">
              <button type="button" class="btn btn-warning" onClick={logHandler}>Log {user.email} out</button>
+             </div>
              </div>
             </div>
         )
