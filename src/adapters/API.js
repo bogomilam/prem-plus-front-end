@@ -84,11 +84,29 @@ const getFollowing = (club_id) => {
     return fetch(`${CLUBS_URL}/${club_id}`).then(jsonify)
 }
 
-const deleteFollowing = (user_id) => {
+const getClubs = () => {
+    return fetch(CLUBS_URL).then(jsonify)
+}
+
+const deleteFollowing = user_id => {
+    console.log("fetch none")
     return fetch(`${USERS_ENDPOINT}/${user_id}`, {
-        method: "DELETE"
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: localStorage.token
+        },
+        body: JSON.stringify({ user_id: user_id,
+        club_id: null })
     }).then(jsonify)
 }
+
+// const deleteFollowing = (user_id) => {
+//     return fetch(`${USERS_ENDPOINT}/${user_id}`, {
+//         method: "DELETE"
+//     }).then(jsonify)
+// }
 
 const clearToken = () => {
     localStorage.removeItem("token");
@@ -102,5 +120,6 @@ export default {
     getFollowing,
     postFollowing,
     deleteFollowing,
-    clearToken
+    clearToken,
+    getClubs
 }

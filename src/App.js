@@ -3,13 +3,9 @@ import './App.css';
 import FixtureContainer from './containers/FixtureContainer';
 import Navbar from './components/Navbar';
 import ResultsContainer from './containers/ResultsContainer';
-// import SignupForm from './components/user/SignupForm'
-import LogInForm from './components/user/LogInForm'
 import API from './adapters/API'
 import Profile from './components/user/Profile'
 import ClubProfile from './components/Clubs/ClubProfile'
-import FullFixture from './components/Fixtures/FullFixture'
-
 import LoginForm from './components/user/LogInForm';
 
 
@@ -45,9 +41,8 @@ const filterSearchResults = () => {
     API.getFollowing(user.club_id).then(club => setFollowedClub(club) )
   }
 
-  const unfollowClub = () => {
-    API.deleteFollowing(user.club_id)
-setFollowedClub(null)
+  const unfollowClub = (user) => {
+    API.deleteFollowing(user.id).then(setFollowedClub(null) )
   }
 
   const followClub = club => {
@@ -86,12 +81,14 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
-  if (user) getSupport() 
+  if (user && user.club_id !== null) getSupport() 
 }, [user]);
 
+
 const fetchClubs = () => {
-  fetch(CLUB_ENDPOINT).then(response => response.json()).then(data => setAllClubs( data ) )
+  API.getClubs().then(clubs => setAllClubs(clubs))
 }
+
 
 const handleLogin = (loginData) => {
   API.login(loginData).then(user => setUser(user))
@@ -115,7 +112,7 @@ const renderFixtureContainer = () => {
   // if (searchedResult === "") return < FixtureContainer showClub={showClub} unshowClub={unshowClub} displayClub={displayClub} />
   if (nav === "Home") return  < FixtureContainer showClub={showClub} unshowClub={unshowClub} displayClub={displayClub} />
   if (nav === "Results") return < ResultsContainer showClub={showClub} unshowClub={unshowClub} />
-  if (nav === "Profile") return < Profile followedClub={followedClub} unfollowClub={unfollowClub} unshowSearch={unshowSearch} user={user} logHandler={logHandler} />
+  if (nav === `${user.email}`) return < Profile followedClub={followedClub} unfollowClub={unfollowClub} unshowSearch={unshowSearch} user={user} logHandler={logHandler} />
   return  < FixtureContainer showClub={showClub} unshowClub={unshowClub} displayClub={displayClub} />
 }
 

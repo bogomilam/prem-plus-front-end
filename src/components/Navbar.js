@@ -16,16 +16,16 @@ export default class Navbar extends React.Component {
               <span className="navbar-toggler-icon"></span>
             </button>
           
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <li className="nav-item" onClick={(e) => handleNav(e)}>
-                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+            <div className="collapse navbar-collapse" id="navbarSupportedContent1">
+              <ul className="nav nav-pills mb-3" id="nav-tab" role="navtab">
+                <li className="nav-item" key="fixtures" onClick={(e) => handleNav(e)}>
+                <a className="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+                </li>
+                <li className="nav-item" key="results" onClick={(e) => handleNav(e)}>
+                <a className="nav-link" id="pills-results-tab" data-toggle="pill" href="#pills-results" role="tab" aria-controls="pills-results" aria-selected="false">Results</a>
                 </li>
                 <li className="nav-item" key="profile" onClick={(e) => handleNav(e)}>
-                <a class="nav-link" id="pills-results-tab" data-toggle="pill" href="#pills-results" role="tab" aria-controls="pills-results" aria-selected="false">Results</a>
-                </li>
-                <li className="nav-item" key="profile" onClick={(e) => handleNav(e)}>
-                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                <a className="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">{user.email}</a>
                 </li>
                 {/* <input placeholder="Search for a team" value={searchValue} onChange={ (e) => handleSearchChange(e)}/> */}
               </ul>

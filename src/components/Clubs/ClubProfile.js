@@ -10,9 +10,15 @@ export default class ClubProfile extends React.Component {
     //     // console.log(props)
     // }
 
+    showHandler = props => {
+        console.log(props, "FIXA")
+        if (!props.displayClub) props.showClub(props.fixture.home_club)
+        else props.unshowClub()
+    }
+
     followButtonHandler = (club, props) => {
         // console.log(club, props, "HEYEY")
-        if (props.followedClub && club.id === props.followedClub.id) return <button type="button" class="btn btn-danger" onClick={()=> props.unfollowClub()}>Unfollow {club.name}</button>
+        if (props.followedClub && club.id === props.followedClub.id) return <button type="button" class="btn btn-danger" onClick={()=> props.unfollowClub(props.user)}>Unfollow {club.name}</button>
         else return <button type="button" class="btn btn-primary" onClick={() => props.resetFollowing(props.club)}>Follow {club.name}</button>
     }
 
@@ -22,9 +28,9 @@ export default class ClubProfile extends React.Component {
         const club   = this.props.club
         if (!club) return <div></div>
         return (
-            <div className="card-team">
-            <div className="profile" >
-            <img className="card-img-top" src={club.image} alt="cad thing"/>
+            <div className="container-fluid" onClick={() =>unshowClub()}>
+            <div className="card-profile" >
+            <img className="card-img-top"  src={club.image} alt="cad thing"/>
             <div className="card-body">
                 <h5 className="card-title">{club.name}</h5>
                 <p className="card-text"></p>

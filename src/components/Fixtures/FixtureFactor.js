@@ -10,7 +10,7 @@ export default class FixtureFactor extends React.Component {
         if (!fixture) return <div></div>
         return (
             // <div className="card-sim">
-            <div class="float-none">
+            <div class="float">
              <h3 className="card-title">Scale Factor</h3>
             <img className="card-img-top" src="https://kaleidoscope.scene7.com/is/image/OttoUK/600w/Lovello-Simply-Stylish-Mechanical-Kitchen-Scales~33J817FRSP_COL_BLACK.jpg" alt="cad thing"/>
             <div className="card-body">

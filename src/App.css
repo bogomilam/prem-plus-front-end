@@ -50,6 +50,23 @@
 
 }
 
+.card-profile{
+  float: left;
+  font-size: 130%;
+  font-family: algerian, courier;
+
+}
+
+.card-result{
+  float: left;
+  font-size: 130%;
+  font-family: algerian, courier;
+}
+
+.card-full{
+  font-family: algerian, courier;
+}
+
 
 .card-sim {
   float: none;

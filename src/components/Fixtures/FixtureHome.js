@@ -6,12 +6,18 @@ export default class FixtureHome extends React.Component {
 //     props.displayClub === null ? props.showClub(props.fixture.home_club) : props.unshowClub()
 //     console.log(props)
 // }
+showHandler = props => {
+    console.log(props, "FIXA")
+    if (!props.displayClub) props.showClub(props.fixture.home_club)
+    else props.unshowClub()
+}
     render() {
-        const { fixture, showClub, unshowClub, avgHomeGoal } = this.props
+        const { fixture, showClub, unshowClub, avgHomeGoal, displayClub } = this.props
         const   club   = this.props.fixture.home_club
         if (!fixture) return <div></div>
         return (
-            <div className="card-team" onClick={() => showClub(club) }>
+            <div className="card-team" onClick={() => this.showHandler(this.props) }>
+            {/* // <div className="card-team" onClick={() => showClub(club) }> */}
                 <h3 className="card-title">Home</h3>
             <img className="card-img-top" src={club.image} alt="cad thing"/>
             <div className="card-body">
@@ -52,7 +58,7 @@ export default class FixtureHome extends React.Component {
                 <span className="badge badge-primary badge-pill">{club.fts_home} </span>
             </li>
             <li className="list-group-item d-flex list-group-item-info justify-content-between align-items-center">
-                Score at Home
+                Scored at Home
                 <span className="badge badge-primary badge-pill">{club.goals_home} </span>
             </li>
             <li className="list-group-item d-flex list-group-item-info justify-content-between align-items-center">

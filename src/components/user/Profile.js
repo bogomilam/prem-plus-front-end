@@ -23,7 +23,7 @@ export default class Profile extends React.Component {
                 You are not following any clubs!
              </div>   
              ) : (
-                 < FollowersProfile followedClub={followedClub} unfollowClub={unfollowClub} unshowSearch={unshowSearch} />
+                 < FollowersProfile followedClub={followedClub} unfollowClub={unfollowClub} unshowSearch={unshowSearch} user={user} />
              )} 
                 </div>
             

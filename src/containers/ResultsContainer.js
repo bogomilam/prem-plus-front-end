@@ -23,7 +23,7 @@ export default class ResultContainer extends React.Component{
         const { results } = this.state
         const { showClub, unshowClub } = this.props
         return(
-            <div className="fixture-container">
+            <div className="card-profile">
             {results.map(result => {
                 return <ResultCard result={result} key={result.id} showClub={showClub} unshowClub={unshowClub} />
              }) }

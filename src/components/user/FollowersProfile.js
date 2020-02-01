@@ -7,9 +7,9 @@ export default class FollowersProfile extends React.Component {
 
     render() {
         
-        const { unshowSearch, unfollowClub } = this.props
+        const { unshowSearch, unfollowClub, user } = this.props
         const club = this.props.followedClub
-        console.log(club)
+        console.log(this.props, "FOLLOWE")
         if (!club) return <div></div>
         return (
             <div className="card-team" onClick={() => unshowSearch()} >
@@ -37,7 +37,7 @@ export default class FollowersProfile extends React.Component {
             < ClubAway club={club} />
             </div>
             <div>
-            <button type="button" class="btn btn-danger" onClick={() => unfollowClub(club.id)}>Unfollow {club.name}</button>
+            <button type="button" class="btn btn-danger" onClick={() => unfollowClub(user)}>Unfollow {club.name}</button>
             {/* followedClub, followClub, unfollowClub, club */}
             {/* <button type="button" class="btn btn-primary" onClick={() => followClub(club.id)}>Follow {club.name}</button> */}
             </div>
