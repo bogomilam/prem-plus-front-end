@@ -11,7 +11,7 @@ export default class ResultAway extends React.Component {
             <div className="card-result" onClick={ () => showClub(result.away_club)}>
             <img className="card-img-top" src={result.away_club.image} alt="cad thing"/>
             <div className="card-body">
-            <h1 className="card-title"> {result.away_goal_count}</h1>
+            <h1 className="card-title">{result.away_goal_count}</h1>
                 <p className="card-text"></p>
                 <h5 className="card-title">{result.away_club.name}</h5>
             </div>

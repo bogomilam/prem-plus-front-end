@@ -38,7 +38,7 @@
 } 
 .card-team {
   /* height: 100px; */
-  /* text-align: centre; */
+  text-align: centre;
   float: left;
   /* font-family: algerian, courier; */
 }
@@ -47,7 +47,6 @@
     float: left;
     font-size: 130%;
     font-family: algerian, courier;
-
 }
 
 .card-profile{

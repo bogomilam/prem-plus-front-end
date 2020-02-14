@@ -10,7 +10,7 @@ export default class FixtureFactor extends React.Component {
         if (!fixture) return <div></div>
         return (
             // <div className="card-sim">
-            <div class="float">
+            <div className="card-team ">
              <h3 className="card-title">Scale Factor</h3>
             <img className="card-img-top" src="https://kaleidoscope.scene7.com/is/image/OttoUK/600w/Lovello-Simply-Stylish-Mechanical-Kitchen-Scales~33J817FRSP_COL_BLACK.jpg" alt="cad thing"/>
             <div className="card-body">
@@ -42,7 +42,7 @@ export default class FixtureFactor extends React.Component {
             </li>
             <li className="list-group-item list-group-item-info d-flex justify-content-between align-items-left">   
                Include Clean Sheets ?
-                <div class="custom-control custom-checkbox">
+                <div className="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="customCheck3"/>
                 <label class="custom-control-label" for="customCheck3" onClick={ () => checkCSItem()}></label>
                 </div>
