@@ -1,5 +1,4 @@
 import React from 'react'
-
 export default class FixtureHome extends React.Component {
     
 // clickHandler = props => {
@@ -11,8 +10,17 @@ showHandler = props => {
     if (!props.displayClub) props.showClub(props.fixture.home_club)
     else props.unshowClub()
 }
+
+diffHandler = props => {
+    console.log(props, "DIFFER")
+    // <li class="list-group-item list-group-item-danger">
+    //             <span className="badge badge-primary badge-pill">No Difference!</span>
+    // </li>
+}
+
+
     render() {
-        const { fixture, showClub, unshowClub, avgHomeGoal, displayClub } = this.props
+        const { fixture, showClub, unshowClub, avgHomeGoal, displayClub, showNoDiff } = this.props
         const   club   = this.props.fixture.home_club
         if (!fixture) return <div></div>
         return (
@@ -68,6 +76,7 @@ showHandler = props => {
             <li class="list-group-item list-group-item-success">
                 <span className="badge badge-primary badge-pill">{avgHomeGoal}</span>
             </li>
+            {() => showNoDiff()}
             </ul>
             </div>
         )

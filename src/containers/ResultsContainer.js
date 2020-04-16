@@ -1,7 +1,7 @@
 import React from 'react'
 import ResultCard from '../components/Results/ResultCard'
 
-const RESULT_ENDPOINT = 'http://localhost:3000/matches?game_week=25'
+const RESULT_ENDPOINT = 'http://localhost:3000/matches?game_week=28'
 
 export default class ResultContainer extends React.Component{
 

@@ -45,8 +45,21 @@ export default class FixtureCard extends React.Component {
       if (this.state.avgAwayGoal) {
         this.checkHomeGoals()
       }
-    })
-  }
+      if (this.state.avgHomeGoal && this.state.avgAwayGoal) {
+        this.showNoDiff(id)
+      }
+  })
+    }
+
+  showNoDiff = (id) => {
+    console.log(id, "differ")
+    // if (this.state.avgHomeGoal === this.state.avgHomeGoal) {
+    //   return    <li class="list-group-item list-group-item-success">
+    //               <span className="badge badge-primary badge-pill">No Diff</span>
+    //             </li>
+    }
+
+
 
   checkAwayGoals = () => {
     if (this.state.avgAwayGoal < 0 ) {
@@ -173,7 +186,7 @@ roundSim = () => {
 
   render() {
     const { fixture, showClub, unshowFixture } = this.props
-    const { checkAvgPointsItem, checkCSItem, checkFTSItem, checkConcedeItem, checkScoredItem } = this
+    const { checkAvgPointsItem, checkCSItem, checkFTSItem, checkConcedeItem, checkScoredItem, showNoDiff   } = this
     const  { avgAwayGoal, avgHomeGoal }  = this.state
 
     return (
@@ -181,7 +194,7 @@ roundSim = () => {
               <div className="card-body">
                 <h5 class="card-title"></h5>
                 <h1> GameWeek: {fixture.game_week}</h1>
-                < FixtureHome fixture={fixture} avgHomeGoal={avgHomeGoal} showClub={showClub} /> 
+                < FixtureHome fixture={fixture} avgHomeGoal={avgHomeGoal} showClub={showClub} showNoDiff={showNoDiff} /> 
                 < FixtureAway fixture={fixture} avgAwayGoal={avgAwayGoal} showClub={showClub}/>
                 < FixtureFactor fixture={fixture} checkAvgPointsItem={checkAvgPointsItem} checkCSItem={checkCSItem} checkFTSItem={checkFTSItem} checkConcedeItem={checkConcedeItem} checkScoredItem={checkScoredItem} /> 
               </div>

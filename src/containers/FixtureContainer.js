@@ -2,7 +2,7 @@ import React from 'react'
 import FixtureCard from '../components/Fixtures/FixtureCard'
 import FullFixture from '../components/Fixtures/FullFixture'
 
-const FIXTURE_ENDPOINT = 'http://localhost:3000/matches?game_week=26'
+const FIXTURE_ENDPOINT = 'http://localhost:3000/matches?game_week=29'
 
 
 
