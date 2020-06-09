@@ -34,35 +34,35 @@ export default class FixtureFactor extends React.Component {
                 Slim Sim
             </li>
             <li className="list-group-item d-flex list-group-item-info justify-content-between align-items-center">   
-               Include Average Points ?
+               Average Points Form?
                 <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="customCheck2"/>
                 <label class="custom-control-label" for="customCheck2" onClick={ () => checkAvgPointsItem()}></label>
                 </div>
             </li>
             <li className="list-group-item list-group-item-info d-flex justify-content-between align-items-left">   
-               Include Clean Sheets ?
+               Clean Sheets Form?
                 <div className="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="customCheck3"/>
                 <label class="custom-control-label" for="customCheck3" onClick={ () => checkCSItem()}></label>
                 </div>
             </li>
             <li className="list-group-item d-flex list-group-item-info justify-content-between align-items-center">
-                Include Failed to Score ?
+                Failed to Score Form?
                 <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="customCheck4"/>
                 <label class="custom-control-label" for="customCheck4" onClick={ () => checkFTSItem()}></label>
                 </div>
             </li>
             <li className="list-group-item d-flex list-group-item-info justify-content-between align-items-center">
-                Include Scored Goals ?
+                Scored Goals Form?
                 <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="customCheck5"/>
                 <label class="custom-control-label" for="customCheck5" onClick={ () => checkScoredItem()}></label>
                 </div>
             </li>
             <li className="list-group-item d-flex list-group-item-info justify-content-between align-items-center">
-                Include Conceded Goals ?
+                Conceded Goals Form?
                 <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="customCheck6"/>
                 <label class="custom-control-label" for="customCheck6" onClick={ () => checkConcedeItem()}></label>
